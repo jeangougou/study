@@ -1,0 +1,1 @@
+Reading "Learning F# Functional Data Structures and Algorithms"
