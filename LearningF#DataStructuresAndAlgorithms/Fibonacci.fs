@@ -1,7 +1,6 @@
 module Fibonacci
 
 open System.Collections.Generic
-open System.Collections.Generic
 
 let rec RecursiveFibonacci n =
   if n <= 2 then 1
