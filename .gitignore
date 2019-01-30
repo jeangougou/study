@@ -1,7 +1,5 @@
-*/obj/*
-*/bin/*
-*/Debug/*
-*/Release/*
+**/obj/*
+**/bin/*
 
 .cache
 
