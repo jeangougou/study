@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="Library.fs" />
+    <Compile Include="Factorial.fs" />
+    <Compile Include="Fibonacci.fs" />
+    <Compile Include="Hanoi.fs" />
+    <Compile Include="Sorting.fs" />
+  </ItemGroup>
+
+</Project>
