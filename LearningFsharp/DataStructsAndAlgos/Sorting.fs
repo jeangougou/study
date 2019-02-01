@@ -45,3 +45,23 @@ let IdiomaticFunctionalBubbleSort list =
     let (x, y) = List.partition (fun i -> i = h) l
     innerBubbleSort (x @ sorted) y
   innerBubbleSort [] list
+
+let split list =
+  let rec aux l acc1 acc2 =
+    match l with
+    | [] -> (acc1,acc2)
+    | [x] -> (x::acc1,acc2)
+    | x::y::tail -> aux tail (x::acc1) (y::acc2)
+  in aux list [] []
+
+let rec merge l1 l2 =
+  match (l1,l2) with
+  | (x,[]) -> x
+  | ([],y) -> y
+  | (x::tx,y::ty) -> if x <= y then x::merge tx l2 else y::merge l1 ty
+
+let rec MergeSort list =
+  match list with
+  | [] -> []
+  | [x] -> [x]
+  | _ -> let (l1,l2) = split list in merge (MergeSort l1) (MergeSort l2)
