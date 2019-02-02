@@ -65,3 +65,18 @@ let rec MergeSort list =
   | [] -> []
   | [x] -> [x]
   | _ -> let (l1,l2) = split list in merge (MergeSort l1) (MergeSort l2)
+
+let rec _safeInsert elem lst =
+  match lst with
+  | [] -> [elem]
+  | hd :: tl -> if elem < hd then elem :: lst
+                else hd :: _safeInsert elem tl
+
+let rec InsertSortMatch lst =
+  match lst with
+  | [] -> []
+  | hd :: tl -> _safeInsert hd (InsertSortMatch tl)
+
+let rec InsertSort = function
+  | [] -> []
+  | hd :: tl -> _safeInsert hd (InsertSort tl)

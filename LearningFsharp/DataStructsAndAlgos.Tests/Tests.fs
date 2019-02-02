@@ -44,3 +44,11 @@ let ``Sorting with mergesort`` () =
   let actualSort = Sorting.MergeSort data |> Seq.toList
   let expectedSort = List.sort data
   List.zip actualSort expectedSort |> List.map (fun (a,b) -> Assert.Equal(a, b))
+
+[<Fact>]
+let ``Sorting with insertsort`` () =
+  let rand = new System.Random()
+  let data = List.init 10 (fun _ -> rand.Next())
+  let actualSort = Sorting.InsertSort data |> Seq.toList
+  let expectedSort = List.sort data
+  List.zip actualSort expectedSort |> List.map (fun (a,b) -> Assert.Equal(a, b))
